@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.StuLoginController;
+
 /**
  *
  * @author User
@@ -33,7 +35,7 @@ public class Loginviewstudent extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnlogin = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -54,11 +56,12 @@ public class Loginviewstudent extends javax.swing.JFrame {
         jLabel3.setText("Student Login");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Loging");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+        btnlogin.setBackground(new java.awt.Color(0, 204, 51));
+        btnlogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnlogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnlogin.setText("Loging");
+        btnlogin.addActionListener(this::btnloginActionPerformed);
+        jPanel1.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(51, 0, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -97,10 +100,66 @@ public class Loginviewstudent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+            try {
+            // 1. Text Fields වලින් Email එක සහ Password එක ලබා ගැනීම
+            String email = stuemail.getText();
+            String password = jTextField1.getText();
+
+            // 2. ඔබ සෑදූ DTO එකට දත්ත ඇතුළත් කිරීම
+            Model.dto.StuLogindto loginDTO = new Model.dto.StuLogindto(email, password);
+            
+            // 3. ඔබ සෑදූ DAO එක හරහා ඩේටාබේස් එක චෙක් කිරීම
+            Model.dao.StuAuthDAO dao = new Model.dao.StuAuthDAO();
+            Model.entity.StudentEntity student = dao.loginStudent(loginDTO);
+
+            // 4. දත්ත නිවැරදි නම් (Database එකෙන් ළමයාගේ විස්තර ආවා නම්)
+            if (student != null) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Welcome, " + student.getName() + "!");
+                
+                // Login ෆෝම් එක වසා දැමීම
+                this.dispose(); 
+                
+                // Dashboard එක ඕපන් කිරීම
+                View.DashbordStudent dash = new View.DashbordStudent();
+                dash.setVisible(true); 
+                
+            } else {
+                // දත්ත වැරදි නම්
+                javax.swing.JOptionPane.showMessageDialog(this, "Invalid Email or Password!", "Login Failed", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+            
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnloginActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
+        // --- කෝඩ් එක දාන්න ඕනේ මෙතැනටයි ---
+        java.awt.EventQueue.invokeLater(() -> {
+            Loginviewstudent view = new Loginviewstudent();
+            Model.dao.StuAuthDAO dao = new Model.dao.StuAuthDAO();
+            
+            // Controller එක මෙතැනදී සම්බන්ධ කරනවා
+            new Controller.StuLoginController(view, dao);
+            
+            view.setVisible(true);
+        });
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -123,7 +182,7 @@ public class Loginviewstudent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnlogin;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -133,4 +192,23 @@ public class Loginviewstudent extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField stuemail;
     // End of variables declaration//GEN-END:variables
+
+ public String getEmail() {
+        return stuemail.getText();
+    }
+
+    public String getPassword() {
+        // ඔයාගේ Password කොටුවේ නම jTextField1 නිසා මෙහෙම දාන්න
+        return jTextField1.getText(); 
+    }
+
+    public void addLoginListener(java.awt.event.ActionListener listener) {
+        btnlogin.addActionListener(listener); 
+    }
+
+    /**
+     *
+     * @param loginListener
+     */
+    
 }

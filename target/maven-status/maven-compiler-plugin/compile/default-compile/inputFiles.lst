@@ -1,5 +1,9 @@
 C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\com\mycompany\school_management_system\School_Management_System.java
+C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\Controller\StuLoginController.java
 C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\DBConnection\DBConnection.java
+C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\Model\dao\StuAuthDAO.java
+C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\Model\dto\StuLogindto.java
+C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\Model\entity\StudentEntity.java
 C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\View\DashbordStudent.java
 C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\View\Loginviewadmin.java
 C:\Users\User\Documents\NetBeansProjects\School_Management_System\src\main\java\View\Loginviewstudent.java
