@@ -9,7 +9,7 @@ package Model.entity;
  * @author User
  */
 public class StudentEntity {
-    private int stuId;
+    private String stuId;
     private String name;
     private String birthday;
     private String studentClass;
@@ -18,7 +18,7 @@ public class StudentEntity {
     private String address;
     private String gender;
 
-    public StudentEntity(int stuId, String name, String birthday, String studentClass, String contactNumber, String email, String address, String gender) {
+    public StudentEntity(String stuId, String name, String birthday, String studentClass, String contactNumber, String email, String address, String gender) {
         this.stuId = stuId;
         this.name = name;
         this.birthday = birthday;

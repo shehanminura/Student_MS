@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="db.TestDB" time="0.008" tests="0" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="db.TestDB" time="0.011" tests="0" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="26"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\test-classes;C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\classes;C:\Users\User\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;C:\Users\User\.m2\repository\com\google\protobuf\protobuf-java\3.25.1\protobuf-java-3.25.1.jar;"/>
+    <property name="java.class.path" value="C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\test-classes;C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\classes;C:\Users\User\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;C:\Users\User\.m2\repository\com\google\protobuf\protobuf-java\3.25.1\protobuf-java-3.25.1.jar;C:\Users\User\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE300\AbsoluteLayout-RELEASE300.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Apache NetBeans\jdk\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire5550098082712193413\surefirebooter-20260826130714513_3.jar C:\Users\User\AppData\Local\Temp\surefire5550098082712193413 2026-08-26T13-07-12_579-jvmRun1 surefire-20260826130714513_1tmp surefire_0-20260826130714513_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire10107391998502348937\surefirebooter-20260827201553463_3.jar C:\Users\User\AppData\Local\Temp\surefire10107391998502348937 2026-08-27T20-15-53_226-jvmRun1 surefire-20260827201553463_1tmp surefire_0-20260827201553463_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\test-classes;C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\classes;C:\Users\User\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;C:\Users\User\.m2\repository\com\google\protobuf\protobuf-java\3.25.1\protobuf-java-3.25.1.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\test-classes;C:\Users\User\Documents\NetBeansProjects\School_Management_System\target\classes;C:\Users\User\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;C:\Users\User\.m2\repository\com\google\protobuf\protobuf-java\3.25.1\protobuf-java-3.25.1.jar;C:\Users\User\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE300\AbsoluteLayout-RELEASE300.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\User"/>
     <property name="user.language" value="en"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire5550098082712193413\surefirebooter-20260826130714513_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire10107391998502348937\surefirebooter-20260827201553463_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="26.0.1+8"/>

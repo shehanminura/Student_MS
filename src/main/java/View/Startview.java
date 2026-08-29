@@ -46,7 +46,7 @@ public class Startview extends javax.swing.JFrame {
 
         btnStudent.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnStudent.setForeground(new java.awt.Color(255, 255, 255));
-        btnStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Gemini_Generated_Image_x7e10lx7e10lx7e1 (1).jpg"))); // NOI18N
+        btnStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/student.jpg"))); // NOI18N
         btnStudent.addActionListener(this::btnStudentActionPerformed);
         getContentPane().add(btnStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, 160, 170));
 
@@ -58,13 +58,13 @@ public class Startview extends javax.swing.JFrame {
 
         btnAdmin.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/949b0464-fa52-425c-ba9f-efca1f3ee23d (1).jpg"))); // NOI18N
+        btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/admin.jpg"))); // NOI18N
         btnAdmin.addActionListener(this::btnAdminActionPerformed);
         getContentPane().add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 160, 170));
 
         btnTeacher.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnTeacher.setForeground(new java.awt.Color(255, 255, 255));
-        btnTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/converted_image (1).jpeg"))); // NOI18N
+        btnTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/teacher.jpeg"))); // NOI18N
         btnTeacher.addActionListener(this::btnTeacherActionPerformed);
         getContentPane().add(btnTeacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 160, 170));
 

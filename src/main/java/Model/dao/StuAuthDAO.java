@@ -32,7 +32,7 @@ public class StuAuthDAO {
             // දත්ත තිබේ නම්, සම්පූර්ණ Entity එකක් හදලා යවනවා
             if (rs.next()) {
                 return new StudentEntity(
-                    rs.getInt("stu_id"),
+                    rs.getString("stu_id"),
                     rs.getString("name"),
                     rs.getString("birthday"),
                     rs.getString("class"),

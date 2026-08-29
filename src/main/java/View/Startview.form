@@ -34,7 +34,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/image/Gemini_Generated_Image_x7e10lx7e10lx7e1 (1).jpg"/>
+          <Image iconType="3" name="/image/student.jpg"/>
         </Property>
       </Properties>
       <Events>
@@ -72,7 +72,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/image/949b0464-fa52-425c-ba9f-efca1f3ee23d (1).jpg"/>
+          <Image iconType="3" name="/image/admin.jpg"/>
         </Property>
       </Properties>
       <Events>
@@ -93,7 +93,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/image/converted_image (1).jpeg"/>
+          <Image iconType="3" name="/image/teacher.jpeg"/>
         </Property>
       </Properties>
       <Events>
