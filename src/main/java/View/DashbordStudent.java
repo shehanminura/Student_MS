@@ -216,7 +216,20 @@ public class DashbordStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_jlbmarksMouseExited
 
     private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
-        // TODO add your handling code here:
+          int choice = javax.swing.JOptionPane.showConfirmDialog(this, 
+                "Are you sure you want to logout?", 
+                "Logout Confirmation", 
+                javax.swing.JOptionPane.YES_NO_OPTION);
+
+        
+        if (choice == javax.swing.JOptionPane.YES_OPTION) {
+            
+            //  Dashboard
+            this.dispose(); 
+            // Startview ( Login)
+            View.Startview startPage = new View.Startview();
+            startPage.setVisible(true);
+        }
     }//GEN-LAST:event_btnlogoutActionPerformed
 
     private void jlbsubjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbsubjectMouseClicked
