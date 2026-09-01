@@ -32,14 +32,19 @@ public class AdminStudentController {
     }
 
     public void addStudent() {
-        StudentDto dto = view.getStudentData();
+   StudentDto dto = view.getStudentData();
         StudentEntity entity = new StudentEntity(
             dto.getId(), dto.getName(), dto.getBirthday(), dto.getStuClass(),
             dto.getContactNumber(), dto.getEmail(), dto.getAddress(), dto.getGender(), dto.getPassword()
         );
         
         if (dao.addStudent(entity)) {
+            // දත්ත සාර්ථකව Add වුණොත් මේ මැසේජ් එක එනවා
             JOptionPane.showMessageDialog(view, "Student Added Successfully!");
+            
+            // Add mail
+            AddStuEmailService.sendWelcomeEmail(dto);
+            
             view.clearFields();
             loadTableData();
         } else {
@@ -56,6 +61,10 @@ public class AdminStudentController {
         
         if (dao.updateStudent(entity)) {
             JOptionPane.showMessageDialog(view, "Student Updated Successfully!");
+            
+            // Update mail
+            AddStuEmailService.sendUpdateEmail(dto);
+            
             view.clearFields();
             loadTableData();
         } else {
@@ -64,9 +73,15 @@ public class AdminStudentController {
     }
 
     public void deleteStudent() {
-        String id = view.getStudentId();
+        StudentDto dto = view.getStudentData(); 
+        String id = dto.getId();
+        
         if (dao.deleteStudent(id)) {
             JOptionPane.showMessageDialog(view, "Student Deleted!");
+            
+            // Delete mail
+            AddStuEmailService.sendDeleteEmail(dto);
+            
             view.clearFields();
             loadTableData();
         } else {

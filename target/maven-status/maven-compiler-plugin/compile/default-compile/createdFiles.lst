@@ -21,6 +21,7 @@ Model\dto\StudentDto.class
 com\mycompany\school_management_system\School_Management_System$1.class
 View\DashbordStudent$6.class
 View\Startview.class
+MailConnection\MailConnection$1.class
 View\Stuprofile.class
 View\DashbordAdmin$3.class
 View\DashbordStudent$3.class
@@ -39,8 +40,10 @@ View\DashbordAdmin.class
 View\DashbordStudent.class
 Model\dao\AdminAuthDAO.class
 View\Loginviewadmin.class
+Controller\AddStuEmailService.class
 com\mycompany\school_management_system\School_Management_System.class
 View\DashbordAdmin$6.class
 View\DashbordStudent$1.class
 View\Startview$2.class
+MailConnection\MailConnection.class
 View\Loginviewteacher.class
