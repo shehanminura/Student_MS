@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.AdminLoginController;
+
 /**
  *
  * @author User
@@ -33,11 +35,11 @@ public class Loginviewadmin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        btnlogin = new javax.swing.JButton();
+        btnback = new javax.swing.JButton();
+        adminpsw = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        stuemail = new javax.swing.JTextField();
+        adminemail = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,31 +56,33 @@ public class Loginviewadmin extends javax.swing.JFrame {
         jLabel3.setText("Admin Login");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Loging");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+        btnlogin.setBackground(new java.awt.Color(0, 204, 51));
+        btnlogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnlogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnlogin.setText("Loging");
+        btnlogin.addActionListener(this::btnloginActionPerformed);
+        jPanel1.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(51, 0, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Back");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
+        btnback.setBackground(new java.awt.Color(51, 0, 153));
+        btnback.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnback.setForeground(new java.awt.Color(255, 255, 255));
+        btnback.setText("Back");
+        btnback.addActionListener(this::btnbackActionPerformed);
+        jPanel1.add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 51));
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 215, -1));
+        adminpsw.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        adminpsw.setForeground(new java.awt.Color(0, 0, 51));
+        adminpsw.addActionListener(this::adminpswActionPerformed);
+        jPanel1.add(adminpsw, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 215, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Password");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 166, -1));
 
-        stuemail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        stuemail.setForeground(new java.awt.Color(0, 0, 51));
-        stuemail.addActionListener(this::stuemailActionPerformed);
-        jPanel1.add(stuemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 215, 28));
+        adminemail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        adminemail.setForeground(new java.awt.Color(0, 0, 51));
+        adminemail.addActionListener(this::adminemailActionPerformed);
+        jPanel1.add(adminemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 215, 28));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Email");
@@ -89,13 +93,64 @@ public class Loginviewadmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void stuemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stuemailActionPerformed
+    private void adminemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_stuemailActionPerformed
+    }//GEN-LAST:event_adminemailActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void adminpswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminpswActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_adminpswActionPerformed
+
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+            try {
+            // 1. Get input Text Fields Email, Password 
+            String email = adminemail.getText();
+            String password = adminpsw.getText();
+
+            // 2. DTO 
+            Model.dto.AdminLoginDto loginDTO = new Model.dto.AdminLoginDto(email, password);
+            
+            // 3. ඔබ සෑදූ DAO එක හරහා ඩේටාබේස් එක චෙක් කිරීම
+            Model.dao.AdminAuthDAO dao = new Model.dao.AdminAuthDAO();
+            Model.entity.AdminEntity admin = dao.loginAdmin(loginDTO);
+
+            // 4. දත්ත නිවැරදි නම් (Database එකෙන් ඇඩ්මින්ගේ විස්තර ආවා නම්)
+            if (admin != null) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Welcome Admin, " + admin.getName() + "!");
+                
+                // Login 
+                this.dispose(); 
+                
+                // Admin Dashboard ( Admin Dashboard)
+                View.DashbordAdmin dash = new View.DashbordAdmin();
+                dash.setVisible(true); 
+                
+            } else {
+               
+                javax.swing.JOptionPane.showMessageDialog(this, "Invalid Email or Password!", "Login Failed", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+            
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_btnloginActionPerformed
+
+    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+                int choice = javax.swing.JOptionPane.showConfirmDialog(this, 
+                "Are you sure you want to back?", 
+                "back Confirmation", 
+                javax.swing.JOptionPane.YES_NO_OPTION);
+
+        
+        if (choice == javax.swing.JOptionPane.YES_OPTION) {
+            
+            //  Dashboard
+            this.dispose(); 
+            // Startview ( Login)
+            View.Startview startPage = new View.Startview();
+            startPage.setVisible(true);
+        }  
+    }//GEN-LAST:event_btnbackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,14 +178,26 @@ public class Loginviewadmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextField adminemail;
+    private javax.swing.JTextField adminpsw;
+    private javax.swing.JButton btnback;
+    private javax.swing.JButton btnlogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField stuemail;
     // End of variables declaration//GEN-END:variables
+
+    public String getEmail() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String getPassword() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+   public void addLoginListener(java.awt.event.ActionListener listener) {
+        btnlogin.addActionListener(listener); 
+    }
 }

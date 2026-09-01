@@ -8,37 +8,30 @@ package Model.entity;
  *
  * @author User
  */
-public class StudentEntity {
-    
-    private String id;
+public class AdminEntity {
+    private String adminId;
     private String name;
     private String birthday;
-    private String stuClass;
     private String contactNumber;
     private String email;
     private String address;
     private String gender;
-    private String password;
 
-    public StudentEntity(String id, String name, String birthday, String stuClass, String contactNumber, String email, String address, String gender, String password) {
-        this.id = id;
+    public AdminEntity(String adminId, String name, String birthday, String contactNumber, String email, String address, String gender) {
+        this.adminId = adminId;
         this.name = name;
         this.birthday = birthday;
-        this.stuClass = stuClass;
         this.contactNumber = contactNumber;
         this.email = email;
         this.address = address;
         this.gender = gender;
-        this.password = password;
     }
 
-    public String getId() { return id; }
+    public String getAdminId() { return adminId; }
     public String getName() { return name; }
     public String getBirthday() { return birthday; }
-    public String getStuClass() { return stuClass; }
     public String getContactNumber() { return contactNumber; }
     public String getEmail() { return email; }
     public String getAddress() { return address; }
     public String getGender() { return gender; }
-    public String getPassword() { return password; }
 }

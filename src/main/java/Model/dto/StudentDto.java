@@ -2,14 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model.entity;
+package Model.dto;
 
 /**
  *
  * @author User
  */
-public class StudentEntity {
-    
+public class StudentDto {
     private String id;
     private String name;
     private String birthday;
@@ -20,7 +19,7 @@ public class StudentEntity {
     private String gender;
     private String password;
 
-    public StudentEntity(String id, String name, String birthday, String stuClass, String contactNumber, String email, String address, String gender, String password) {
+    public StudentDto(String id, String name, String birthday, String stuClass, String contactNumber, String email, String address, String gender, String password) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -32,6 +31,7 @@ public class StudentEntity {
         this.password = password;
     }
 
+    // Getters
     public String getId() { return id; }
     public String getName() { return name; }
     public String getBirthday() { return birthday; }

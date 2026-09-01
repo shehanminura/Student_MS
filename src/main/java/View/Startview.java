@@ -103,8 +103,10 @@ public class Startview extends javax.swing.JFrame {
              java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new View.Loginviewstudent().setVisible(true);
+                
             }
-        });        // TODO add your handling code here:
+        }); 
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_btnStudentActionPerformed
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
@@ -112,7 +114,8 @@ public class Startview extends javax.swing.JFrame {
             public void run() {
                 new View.Loginviewadmin().setVisible(true);
             }
-        });      // TODO add your handling code here:
+        });     
+       this.dispose();
     }//GEN-LAST:event_btnAdminActionPerformed
 
     private void btnTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTeacherActionPerformed
@@ -120,7 +123,8 @@ public class Startview extends javax.swing.JFrame {
             public void run() {
                 new View.Loginviewteacher().setVisible(true);
             }
-        });      // TODO add your handling code here:
+        });      
+        this.dispose();
     }//GEN-LAST:event_btnTeacherActionPerformed
 
     private void btnhelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhelpActionPerformed

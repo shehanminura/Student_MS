@@ -36,7 +36,7 @@ public class Loginviewstudent extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnlogin = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         stuemail = new javax.swing.JTextField();
@@ -63,11 +63,12 @@ public class Loginviewstudent extends javax.swing.JFrame {
         btnlogin.addActionListener(this::btnloginActionPerformed);
         jPanel1.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(51, 0, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Back");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
+        btnBack.setBackground(new java.awt.Color(51, 0, 153));
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 0, 51));
@@ -135,6 +136,23 @@ public class Loginviewstudent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnloginActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        int choice = javax.swing.JOptionPane.showConfirmDialog(this, 
+                "Are you sure you want to back?", 
+                "back Confirmation", 
+                javax.swing.JOptionPane.YES_NO_OPTION);
+
+        
+        if (choice == javax.swing.JOptionPane.YES_OPTION) {
+            
+            //  Dashboard
+            this.dispose(); 
+            // Startview ( Login)
+            View.Startview startPage = new View.Startview();
+            startPage.setVisible(true);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -162,8 +180,8 @@ public class Loginviewstudent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnlogin;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
