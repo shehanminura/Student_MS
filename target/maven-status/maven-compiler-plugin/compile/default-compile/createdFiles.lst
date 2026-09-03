@@ -2,6 +2,7 @@ View\AdminAddTeachPanel.class
 View\DashbordStudent$5.class
 View\DashbordAdmin$1.class
 View\DashbordAdmin$8.class
+Controller\AddTeachEmailService.class
 View\AdminAddStuPanel.class
 Controller\AdminStudentController.class
 View\Startview$1.class

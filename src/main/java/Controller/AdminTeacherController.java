@@ -12,6 +12,7 @@ public class AdminTeacherController {
     
     private AdminAddTeachPanel view;
     private AdminTeacherDAO dao;
+    private TeacherDto dto;
 
     public AdminTeacherController(AdminAddTeachPanel view) {
         this.view = view;
@@ -36,6 +37,7 @@ public class AdminTeacherController {
             JOptionPane.showMessageDialog(view, "Teacher Added Successfully!");
             view.clearFields();
             loadTableData();
+            AddTeachEmailService.sendWelcomeEmail(dto);
         } else {
             JOptionPane.showMessageDialog(view, "Failed to Add Teacher!", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -52,17 +54,21 @@ public class AdminTeacherController {
             JOptionPane.showMessageDialog(view, "Teacher Updated Successfully!");
             view.clearFields();
             loadTableData();
+            AddTeachEmailService.sendUpdateEmail(dto);
         } else {
             JOptionPane.showMessageDialog(view, "Failed to Update Teacher!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public void deleteTeacher() {
-        String id = view.getTeachertId();
+        TeacherDto dto =view.getTeacherData();
+        String id = dto.getTeacherId();
         if (dao.deleteTeacher(id)) {
             JOptionPane.showMessageDialog(view, "Teacher Deleted!");
+            AddTeachEmailService.sendDeleteEmail(dto);
             view.clearFields();
             loadTableData();
+            
         } else {
             JOptionPane.showMessageDialog(view, "Failed to Delete Teacher!", "Error", JOptionPane.ERROR_MESSAGE);
         }
