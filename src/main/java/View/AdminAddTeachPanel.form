@@ -56,7 +56,7 @@
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jTxtid" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                                      <Component id="jTxtclass" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
+                                      <Component id="jTxtnic" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                                       <Component id="jTxtaddress" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -138,7 +138,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTxtclass" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTxtnic" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -192,7 +192,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jstuTable">
+        <Component class="javax.swing.JTable" name="jTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="4">
@@ -206,7 +206,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="jTxtclass">
+    <Component class="javax.swing.JTextField" name="jTxtnic">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
@@ -215,7 +215,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Student ID: "/>
+        <Property name="text" type="java.lang.String" value="Teacher ID: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTxtid">
@@ -227,7 +227,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Class: "/>
+        <Property name="text" type="java.lang.String" value="NIC:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTxtCnumber">

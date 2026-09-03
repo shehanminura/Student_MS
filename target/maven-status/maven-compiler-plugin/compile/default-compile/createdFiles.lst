@@ -1,3 +1,4 @@
+View\AdminAddTeachPanel.class
 View\DashbordStudent$5.class
 View\DashbordAdmin$1.class
 View\DashbordAdmin$8.class
@@ -22,13 +23,17 @@ com\mycompany\school_management_system\School_Management_System$1.class
 View\DashbordStudent$6.class
 View\Startview.class
 MailConnection\MailConnection$1.class
+Model\entity\TeacherEntity.class
 View\Stuprofile.class
 View\DashbordAdmin$3.class
 View\DashbordStudent$3.class
 View\Edumate.class
 View\Startview$3.class
+Model\dto\TeacherDto.class
+Controller\AdminTeacherController.class
 Controller\StuLoginController$LoginListener.class
 Controller\AdminLoginController.class
+Model\dao\AdminTeacherDAO.class
 View\DashbordAdmin$2.class
 DBConnection\DBConnection.class
 Controller\StuLoginController.class

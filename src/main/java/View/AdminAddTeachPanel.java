@@ -4,27 +4,28 @@
  */
 package View;
 
-import Model.dto.StudentDto;
+import Model.dto.TeacherDto;
 /**
  *
  * @author User
  */
-public class AdminAddStuPanel extends javax.swing.JPanel {
-private Controller.AdminStudentController controller;
+public class AdminAddTeachPanel extends javax.swing.JPanel {
+private Controller.AdminTeacherController controller;
+
 
     /**
      * Creates new form Stusubject
      */
-    public AdminAddStuPanel() {
+    public AdminAddTeachPanel() {
         initComponents();
         // make JTable column
-        jstuTable.setModel(new javax.swing.table.DefaultTableModel(
+            jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {},
-            new String [] {"ID", "Name", "Class", "Contact", "Email", "Gender"}
+            new String [] {"ID", "Name", "Birthday", "NIC", "Contact", "Email", "Gender"}
         ));
         
-        //  connect Controller
-        controller = new Controller.AdminStudentController(this);
+        // Connect Controller
+        controller = new Controller.AdminTeacherController(this);
     }
 
     /**
@@ -38,8 +39,8 @@ private Controller.AdminStudentController controller;
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jstuTable = new javax.swing.JTable();
-        jTxtclass = new javax.swing.JTextField();
+        jTable = new javax.swing.JTable();
+        jTxtnic = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jTxtid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -76,7 +77,7 @@ private Controller.AdminStudentController controller;
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jstuTable.setModel(new javax.swing.table.DefaultTableModel(
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -87,15 +88,15 @@ private Controller.AdminStudentController controller;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jstuTable);
+        jScrollPane1.setViewportView(jTable);
 
-        jTxtclass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTxtnic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel1.setText("Student ID: ");
+        jLabel1.setText("Teacher ID: ");
 
         jTxtid.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel2.setText("Class: ");
+        jLabel2.setText("NIC:");
 
         jTxtCnumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -180,7 +181,7 @@ private Controller.AdminStudentController controller;
                                     .addGap(27, 27, 27)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jTxtid, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTxtclass, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTxtnic, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTxtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(18, 18, 18)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +241,7 @@ private Controller.AdminStudentController controller;
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTxtclass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTxtnic, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel9))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -276,15 +277,15 @@ private Controller.AdminStudentController controller;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnaddActionPerformed
-        controller.addStudent();
+        controller.addTeacher();
     }//GEN-LAST:event_jBtnaddActionPerformed
 
     private void jbtndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtndeleteActionPerformed
-        controller.deleteStudent();
+        controller.deleteTeacher();
     }//GEN-LAST:event_jbtndeleteActionPerformed
 
     private void jbtnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnupdateActionPerformed
-        controller.updateStudent();
+        controller.updateTeacher();
     }//GEN-LAST:event_jbtnupdateActionPerformed
 
     private void jbtnreportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnreportActionPerformed
@@ -296,53 +297,52 @@ private Controller.AdminStudentController controller;
     }//GEN-LAST:event_jComboBoxgenderActionPerformed
 
     private void jbtnseartchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnseartchActionPerformed
-        controller.searchStudent();
+        controller.searchTeacher();
     }//GEN-LAST:event_jbtnseartchActionPerformed
-
-public Model.dto.StudentDto getStudentData() {
-        return new Model.dto.StudentDto(
+public TeacherDto getTeacherData() {
+        return new TeacherDto(
             jTxtid.getText(), 
             jTxtname.getText(), 
-            jTxtbirthday.getText(), 
-            jTxtclass.getText(),
+            jTxtbirthday.getText(), // New birthday field
             jTxtCnumber.getText(), 
             jTxtemail.getText(), 
-            jTxtaddress.getText(),
             jComboBoxgender.getSelectedItem().toString(), 
+            jTxtaddress.getText(),
+            jTxtnic.getText(),
             jTxtpsw.getText()
         );
     }
 
-    public void clearFields() {
+public void clearFields() {
         jTxtid.setText(""); 
         jTxtname.setText(""); 
         jTxtbirthday.setText("");
-        jTxtclass.setText(""); 
+        jTxtnic.setText(""); 
         jTxtCnumber.setText(""); 
         jTxtemail.setText("");
         jTxtaddress.setText(""); 
         jTxtpsw.setText("");
     }
 
-    public String getStudentId() {
+    public String getTeachertId() {
         return jTxtid.getText();
     }
 
-    public void setStudentData(Model.dto.StudentDto student) {
-        jTxtname.setText(student.getName());
-        jTxtbirthday.setText(student.getBirthday());
-        jTxtclass.setText(student.getStuClass());
-        jTxtCnumber.setText(student.getContactNumber());
-        jTxtemail.setText(student.getEmail());
-        jTxtaddress.setText(student.getAddress());
-        jComboBoxgender.setSelectedItem(student.getGender());
-        jTxtpsw.setText(student.getPassword());
+ public void setTeacherData(TeacherDto teacher) {
+        jTxtname.setText(teacher.getName());
+        jTxtbirthday.setText(teacher.getBirthday()); // Setting birthday field
+        jTxtCnumber.setText(teacher.getContactNumber());
+        jTxtemail.setText(teacher.getEmail());
+        jTxtaddress.setText(teacher.getAddress());
+        jComboBoxgender.setSelectedItem(teacher.getGender());
+        jTxtnic.setText(teacher.getNic());
+        jTxtpsw.setText(teacher.getPassword());
     }
     
     
 
     public javax.swing.JTable getTable() {
-        return jstuTable;
+        return jTable;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -359,18 +359,19 @@ public Model.dto.StudentDto getStudentData() {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable;
     private javax.swing.JTextField jTxtCnumber;
     private javax.swing.JTextField jTxtaddress;
     private javax.swing.JTextField jTxtbirthday;
-    private javax.swing.JTextField jTxtclass;
     private javax.swing.JTextField jTxtemail;
     private javax.swing.JTextField jTxtid;
     private javax.swing.JTextField jTxtname;
+    private javax.swing.JTextField jTxtnic;
     private javax.swing.JTextField jTxtpsw;
     private javax.swing.JButton jbtndelete;
     private javax.swing.JButton jbtnreport;
     private javax.swing.JButton jbtnseartch;
     private javax.swing.JButton jbtnupdate;
-    private javax.swing.JTable jstuTable;
     // End of variables declaration//GEN-END:variables
+
 }
